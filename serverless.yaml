@@ -3,12 +3,11 @@ custom:
   secrets:
     dev: 
       db_creds: ${ssm:/aws/reference/secretsmanager/${env:ENV}/rds-secret~true}
-      #db_user: ${ssm:/${env:ENV}/db-user}
-      #db_host: ${ssm:/${env:ENV}/db-host}
-      #db_name: ${ssm:/${env:ENV}/db-name}
+      db_host: ${ssm:/${env:ENV}/db-host}
+      db_name: ${ssm:/${env:ENV}/db-name}
       db_port: 3306
-      #account_id: ${ssm:/${env:ENV}/account-id}
-      #region: ${ssm:/${env:ENV}/region}
+      account_id: ${ssm:/${env:ENV}/account-id}
+      region: ${ssm:/${env:ENV}/region}
     #local: ${file(local_secrets.json)}
 provider:
   name: aws
